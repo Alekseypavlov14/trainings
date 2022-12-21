@@ -1,7 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { TrainingsActions } from '@features/trainings/trainings.actions'
+import { LocalStorage } from '@utils/LocalStorage'
 import { AppState } from '@store'
 import { Training } from '@features/trainings/trainings.entity'
-import { LocalStorage } from '@utils/LocalStorage'
 
 const TrainingsStorage = new LocalStorage<Training>('trainings')
 
@@ -17,12 +18,12 @@ const trainingsSlice = createSlice({
   initialState,
   name: 'trainings',
   reducers: {
-    create() {},
-    update() {},
-    delete() {}
+    create(state, action: PayloadAction<TrainingsActions.Create>) {},
+    update(state, action: PayloadAction<TrainingsActions.Update>) {},
+    destroy(state, action: PayloadAction<TrainingsActions.Delete>) {}
   }
 })
 
 export const trainingsReducer = trainingsSlice.reducer
-export const {} = trainingsSlice.actions
+export const { create, update, destroy } = trainingsSlice.actions
 export const trainingsSelector = (state: AppState) => state.trainings
