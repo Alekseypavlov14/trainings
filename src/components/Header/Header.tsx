@@ -7,7 +7,7 @@ interface HeaderProps {}
 export const Header: FC<HeaderProps> = () => {
   return (
     <div className={styles.Header}>
-      <Title bold>Trainings</Title>
+      <Title bold>Workout</Title>
     </div>
   )
 }
