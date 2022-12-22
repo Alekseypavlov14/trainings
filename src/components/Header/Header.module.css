@@ -2,6 +2,23 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid #ccc;
   padding: 20px 10px;
+}
+
+.TitleAndLogo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.BurgerButton {
+  margin-right: 10px; /* for visual niceness */
+}
+
+.BurgerButton > span,
+.BurgerButton::before,
+.BurgerButton::after {
+  background-color: #333;
 }

@@ -1,0 +1,14 @@
+.SideBar {
+  position: fixed;
+  width: 70%;
+  height: 100%;
+  left: -130%;
+  top: 0;
+  background-color: #fff;
+  border-right: 1px solid #333;
+  transition: 0.3s;
+}
+
+.Opened {
+  left: 0;
+}
