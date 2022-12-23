@@ -3,9 +3,12 @@ import { Training } from "@features/trainings/trainings.entity"
 export namespace TrainingsActions {
   export interface Create extends Omit<Training, 'id'> {}
 
-  export interface Update {
+  export interface Increment {
     id: number
-    updatedValues: Omit<Training, 'id'>
+  }
+
+  export interface Decrement {
+    id: number
   }
   
   export interface Delete {

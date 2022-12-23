@@ -1,0 +1,47 @@
+.TrainingBadge {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #999;
+}
+
+.Name {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.Panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.Amount {
+  font-size: 22px;
+}
+
+.Button {
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  display: block;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  font-weight: 600;
+}
+
+.ButtonMinus {
+  background-color: rgb(253, 126, 126);
+  color: #fff;
+}
+
+.ButtonPlus {
+  background-color: rgb(66, 223, 4);
+  color: #fff;
+}
+.Button:disabled {
+  background-color: #ccc;
+}

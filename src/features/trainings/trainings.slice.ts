@@ -32,16 +32,25 @@ const trainingsSlice = createSlice({
       state.trainings.push(newTraining)
       TrainingsStorage.setValue(state.trainings)
     },
-    update(state, action: PayloadAction<TrainingsActions.Update>) {
+    increment(state, action: PayloadAction<TrainingsActions.Increment>) {
       const trainings = state.trainings
-      const { id, updatedValues } = action.payload
-      const training = trainings.find(training => training.id === id)
+      const training = trainings.find(training => training.id === action.payload.id)
 
       if (!training) return state
-      Object.assign(training, updatedValues)
+
+      training.amount += 1
 
       TrainingsStorage.setValue(state.trainings)
+    },
+    decrement(state, action: PayloadAction<TrainingsActions.Decrement>) {
+      const trainings = state.trainings
+      const training = trainings.find(training => training.id === action.payload.id)
 
+      if (!training) return state
+
+      training.amount -= 1
+
+      TrainingsStorage.setValue(state.trainings)
     },
     destroy(state, action: PayloadAction<TrainingsActions.Delete>) {
       const trainings = state.trainings
@@ -55,5 +64,5 @@ const trainingsSlice = createSlice({
 })
 
 export const trainingsReducer = trainingsSlice.reducer
-export const { create, update, destroy } = trainingsSlice.actions
-export const trainingsSelector = (state: AppState) => state.trainings
+export const { create, increment, decrement, destroy } = trainingsSlice.actions
+export const trainingsSelector = (state: AppState) => state.trainings.trainings
