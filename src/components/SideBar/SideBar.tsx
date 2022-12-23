@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import { Container } from '@components/Container/Container'
-import styles from './SideBar.module.css'
-import cn from 'classnames'
 import { Navigation } from '@components/Navigation/Navigation'
 import { Title } from '@components/Title/Title'
+import styles from './SideBar.module.css'
+import cn from 'classnames'
 
 interface SideBarProps {
   isOpened: boolean
