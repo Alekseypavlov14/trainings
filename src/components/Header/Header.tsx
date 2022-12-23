@@ -24,7 +24,10 @@ export const Header: FC<HeaderProps> = () => {
         onClick={toggleMenu}
       />
 
-      <SideBar isOpened={isMenuOpened} />
+      <SideBar 
+        isOpened={isMenuOpened} 
+        toggleMenu={toggleMenu}
+      />
     </div>
   )
 }
