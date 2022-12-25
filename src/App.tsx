@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { AddTrainingToDayPage } from '@features/trainings/pages/AddTrainingToDayPage/AddTrainingToDayPage'
 import { TrainingsInDayPage } from '@features/trainings/pages/TrainingsInDayPage/TrainingsInDayPage'
 import { HistoryPage } from '@features/history/pages/HistoryPage/HistoryPage'
+import { DatePage } from '@features/history/pages/DatePage/DatePage'
 import './App.css'
 
 export function App() {
@@ -12,6 +13,7 @@ export function App() {
         <Route path='/' element={<TrainingsInDayPage />} />
         <Route path='/add-training' element={<AddTrainingToDayPage />} />
         <Route path='/history' element={<HistoryPage />} />
+        <Route path='/history/:date' element={<DatePage />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Route>
     </Routes>
