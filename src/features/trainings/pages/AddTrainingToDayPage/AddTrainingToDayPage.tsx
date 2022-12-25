@@ -1,29 +1,22 @@
 import { ChangeEvent, FC, useState } from 'react'
+import { useTraining } from '@features/trainings/hooks/useTraining'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
 import { Container } from '@components/Container/Container'
 import { Title } from '@components/Title/Title'
-import { create } from '@features/trainings/trainings.slice'
 import styles from './AddTrainingToDayPage.module.css'
 
 interface AddTrainingToDayPageProps {}
 
 export const AddTrainingToDayPage: FC<AddTrainingToDayPageProps> = () => {
   const [name, setName] = useState<string>('')
+  const createTraining = useTraining()
   const navigate = useNavigate()
-  const dispatch = useDispatch()
 
   const inputNameHandler = (e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)
 
   const addHandler = () => {
     if (name.length === 0) return
-
-    dispatch(create({
-      name: name,
-      date: Date.now(), // today
-      amount: 1 // first today
-    }))
-  
+    createTraining(name)
     navigate('/')
   }
 
