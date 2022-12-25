@@ -1,5 +1,5 @@
-.TrainingsInDayPage {
-  
+.TitleContainer {
+  margin-bottom: 30px;
 }
 
 .TrainingBadges > *:not(:last-child) {

@@ -1,19 +1,26 @@
 import { FC } from 'react'
-import { useSelector } from 'react-redux'
-import { Container } from '@components/Container/Container'
+import { useTrainingsByDate } from '@features/trainings/hooks/useTrainingsByDate'
 import { AddTrainingToDay } from '@features/trainings/components/AddTrainingToDay/AddTrainingToDay'
 import { TrainingBadge } from '@features/trainings/components/TrainingBadge/TrainingBadge'
-import { trainingsSelector } from '@features/trainings/trainings.slice'
+import { Container } from '@components/Container/Container'
+import { Title } from '@components/Title/Title'
+import { Date } from 'standard-ui'
 import styles from './TrainingsInDayPage.module.css'
 
 interface TrainingsInDayPageProps {}
 
 export const TrainingsInDayPage: FC<TrainingsInDayPageProps> = () => {
-  const trainings = useSelector(trainingsSelector)
+  const trainings = useTrainingsByDate(window.Date.now())
 
   return (
     <div className={styles.TrainingsInDayPage}>
       <Container>
+        <div className={styles.TitleContainer}>
+          <Title bold>
+            <Date time={window.Date.now()} />
+          </Title>
+        </div>
+        
         <div className={styles.TrainingBadges}>
           {trainings.map(training => (
             <TrainingBadge
