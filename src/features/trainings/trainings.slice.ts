@@ -56,7 +56,7 @@ const trainingsSlice = createSlice({
       const trainings = state.trainings
       const id = action.payload.id
 
-      state.trainings = trainings.filter(training => training.id === id)
+      state.trainings = trainings.filter(training => training.id !== id)
 
       TrainingsStorage.setValue(state.trainings)
     }

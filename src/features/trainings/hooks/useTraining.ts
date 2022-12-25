@@ -11,8 +11,6 @@ export function useTraining() {
     const year = now.getFullYear()
     const today = new Date(year, month, date)
   
-    console.log(date, month, year, today)
-  
     dispatch(create({
       name: name,
       date: today.getTime(),

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { decrement, increment } from '@features/trainings/trainings.slice'
 import styles from './TrainingBadge.module.css'
 import cn from 'classnames'
+import { DeleteButton } from '../DeleteButton/DeleteButton'
 
 interface TrainingBadgeProps {
   id: number
@@ -45,6 +46,8 @@ export const TrainingBadge: FC<TrainingBadgeProps> = ({ id, name, amount }) => {
           +
         </button>
       </div>
+
+      <DeleteButton id={id} />
     </div>
   )
 }
