@@ -26,7 +26,7 @@ export const HistoryPage: FC<HistoryPageProps> = () => {
             <div className={styles.Day}>
               <Day time={searchedDate} />
             </div>
-          ) : activeDays.map((day, index) => (
+          ) : activeDays.reverse().map((day, index) => (
             <div 
               className={styles.Day} 
               key={index}
