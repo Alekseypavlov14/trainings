@@ -1,3 +1,13 @@
+.SearchBox {
+  margin-bottom: 30px;
+}
+
+.SearchLabel {
+  font-size: 18px;
+  margin-bottom: 5px;
+  display: block;
+}
+
 .Day:not(:last-child) {
   margin-bottom: 10px;
 }

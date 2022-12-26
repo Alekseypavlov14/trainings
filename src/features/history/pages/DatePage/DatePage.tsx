@@ -28,7 +28,7 @@ export const DatePage: FC<DatePageProps> = () => {
 
         <div className={styles.Trainings}>
           {trainings.map(training => (
-            <div className={styles.Training}>
+            <div className={styles.Training} key={training.id}>
               <div className={styles.TrainingName}>
                 {training.name}
               </div>

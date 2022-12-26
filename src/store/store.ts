@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { trainingsReducer } from '@features/trainings/trainings.slice'
+import { historyReducer } from "@features/history/history.slice"
 
 export const store = configureStore({
   reducer: {
-    trainings: trainingsReducer
+    trainings: trainingsReducer,
+    history: historyReducer
   }
 })
 

@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import { useDispatch } from 'react-redux'
 import { decrement, increment } from '@features/trainings/trainings.slice'
+import { DeleteButton } from '../DeleteButton/DeleteButton'
+import { useDispatch } from 'react-redux'
 import styles from './TrainingBadge.module.css'
 import cn from 'classnames'
-import { DeleteButton } from '../DeleteButton/DeleteButton'
 
 interface TrainingBadgeProps {
   id: number
