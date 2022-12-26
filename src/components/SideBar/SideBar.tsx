@@ -11,17 +11,25 @@ interface SideBarProps {
 }
 
 export const SideBar: FC<SideBarProps> = ({ isOpened, toggleMenu }) => {
-  const classNames = cn(styles.SideBar, isOpened && styles.Opened)
+  const SideBarClassNames = cn(styles.SideBar, isOpened && styles.Opened)
+  const BackGroundClassNames = cn(styles.BackGround, isOpened && styles.Opened)
 
   return (
-    <div 
-      className={classNames} 
-      onClick={toggleMenu}
-    >
-      <Container>
-        <Title bold>Navigation</Title>
-        <Navigation />
-      </Container>
-    </div>
+    <>
+      <div 
+        className={BackGroundClassNames}
+        onClick={toggleMenu}
+      >
+      </div>
+      <div 
+        className={SideBarClassNames} 
+        onClick={toggleMenu}
+      >
+        <Container>
+          <Title bold>Navigation</Title>
+          <Navigation />
+        </Container>
+      </div>
+    </>
   )
 }
