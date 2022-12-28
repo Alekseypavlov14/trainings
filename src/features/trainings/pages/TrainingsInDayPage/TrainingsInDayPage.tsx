@@ -31,6 +31,12 @@ export const TrainingsInDayPage: FC<TrainingsInDayPageProps> = () => {
             />
           ))}
         </div>
+        
+        {trainings.length === 0 && (
+          <div className={styles.Placeholder}>
+            Let's work out!
+          </div>
+        )}
 
         <AddTrainingToDay />
       </Container>

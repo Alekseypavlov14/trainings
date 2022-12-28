@@ -1,7 +1,28 @@
+.TrainingsInDayPage {
+  height: 100%;
+}
+
+/* Container */
+.TrainingsInDayPage > * {
+  display: flex;
+  flex-direction: column;
+}
+
 .TitleContainer {
   margin-bottom: 30px;
 }
 
 .TrainingBadges > *:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.Placeholder {
+  font-size: 18px;
+  color: #999;
+  text-align: center;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 60px;
 }
