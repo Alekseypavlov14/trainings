@@ -1,16 +1,12 @@
 import { FC, useState } from 'react'
-import { focusDate, focusedDateSelector } from '@features/calendar/calendar.slice'
-import { useDispatch, useSelector } from 'react-redux'
 import { getDaysArrayFromMonth } from '@features/calendar/utils/getDaysArrayFromMonth'
 import { shortedDaysOfWeek } from '@features/calendar/constants/daysOfWeek'
 import { getMonthFromDate } from '@features/calendar/utils/getMonthFromDate'
 import { getPrevDaysRange } from '@features/calendar/utils/getPrevDaysRange'
 import { getNextDaysRange } from '@features/calendar/utils/getNextDaysRange'
-import { areDatesEqual } from '@features/calendar/utils/areDatesEqual'
 import { getPrevMonth } from '@features/calendar/utils/getPrevMonth'
 import { getNextMonth } from '@features/calendar/utils/getNextMonth'
 import { parseDate } from '@features/calendar/utils/parseDate'
-import type { Date } from '@features/calendar/types/Date'
 import { WeekDay } from '@features/calendar/components/WeekDay/WeekDay'
 import { months } from '@features/calendar/constants/months'
 import { Month } from '@features/calendar/types/Month'
@@ -20,23 +16,16 @@ import styles from './Calendar.module.css'
 interface CalendarProps {}
 
 export const Calendar: FC<CalendarProps> = () => {
-  const dispatch = useDispatch()
-  const focusedDate = useSelector(focusedDateSelector)
-
   const month = getMonthFromDate(parseDate(Date.now()))
   const [currentMonth, setCurrentMonth] = useState<Month>(month)
 
   const setPrevMonth = () => setCurrentMonth(getPrevMonth(currentMonth))
   const setNextMonth = () => setCurrentMonth(getNextMonth(currentMonth))
 
-  const focusDateHandler = (date: Date) => {
-    return () => dispatch(focusDate({ date }))
-  }
-
   const daysArray = getDaysArrayFromMonth(currentMonth)
 
-  const prevDays = getPrevDaysRange(month)
-  const nextDays = getNextDaysRange(month)
+  const prevDays = getPrevDaysRange(currentMonth)
+  const nextDays = getNextDaysRange(currentMonth)
 
   return (
     <>
@@ -58,8 +47,6 @@ export const Calendar: FC<CalendarProps> = () => {
   
           {daysArray.map((day, index) => (
             <Day 
-              isFocused={areDatesEqual(focusedDate, day)}
-              onClick={focusDateHandler(day)}
               key={`${day}-${index}`} 
               date={day} 
             />

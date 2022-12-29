@@ -1,35 +1,30 @@
 import { FC } from 'react'
-import { parseDate } from '@features/calendar/utils/parseDate'
+import { focusDate, focusedDateSelector } from '@features/calendar/calendar.slice'
+import { useDispatch, useSelector } from 'react-redux'
 import { areDatesEqual } from '@features/calendar/utils/areDatesEqual'
+import { parseDate } from '@features/calendar/utils/parseDate'
 import type { Date } from '@features/calendar/types/Date'
 import styles from './Day.module.css'
 import cn from 'classnames'
 
 interface DayProps {
   date: Date
-  onClick: () => void
-  isFocused: boolean
 }
 
-export const Day: FC<DayProps> = ({ date, onClick, isFocused }) => {
-  const classNames: string[] = []
+export const Day: FC<DayProps> = ({ date }) => {
+  const dispatch = useDispatch()
+  const focusedDate = useSelector(focusedDateSelector)
 
-  // add styles if it is today
-  const today = parseDate(Date.now())
-  if (areDatesEqual(date, today)) classNames.push(styles.Today)
+  const isToday = areDatesEqual(date, parseDate(Date.now()))
+  const isFocused = areDatesEqual(date, focusedDate)
+  const classNames = cn(styles.Day, isToday && styles.Today, isFocused && styles.Focused)
 
-  // add styles if it is focused
-  if (isFocused) classNames.push(styles.Focused)
-
-  const className = cn(
-    styles.Day,
-    ...classNames
-  )
+  const focusDateHandler = () => dispatch(focusDate({ date }))
 
   return (
     <div 
-      className={className}
-      onClick={onClick}
+      className={classNames}
+      onClick={focusDateHandler}
     >
       {date.day}
     </div>
