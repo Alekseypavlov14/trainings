@@ -1,31 +1,29 @@
 import { FC, useState } from 'react'
-// utils
-import { getDaysArrayFromMonth } from './../../utils/getDaysArrayFromMonth'
-import { getMonthFromDate } from './../../utils/getMonthFromDate'
-import { getPrevDaysRange } from '../../utils/getPrevDaysRange'
-import { getNextDaysRange } from '../../utils/getNextDaysRange'
-import { getPrevMonth } from '../../utils/getPrevMonth'
-import { getNextMonth } from '../../utils/getNextMonth'
-import { parseDate } from './../../utils/parseDate'
-// constants
-import { shortedDaysOfWeek } from './../../constants/daysOfWeek'
-import { months } from './../../constants/months'
-// components
-import { WeekDay } from './../WeekDay/WeekDay'
-import { Day } from './../Day/Day'
-// types
-import type { Date } from '../../types/Date'
-import { Month } from '../../types/Month'
-// redux
-import styles from './Calendar.module.css'
+import { focusDate, focusedDateSelector } from '@features/calendar/calendar.slice'
+import { useDispatch, useSelector } from 'react-redux'
+import { getDaysArrayFromMonth } from '@features/calendar/utils/getDaysArrayFromMonth'
+import { shortedDaysOfWeek } from '@features/calendar/constants/daysOfWeek'
+import { getMonthFromDate } from '@features/calendar/utils/getMonthFromDate'
+import { getPrevDaysRange } from '@features/calendar/utils/getPrevDaysRange'
+import { getNextDaysRange } from '@features/calendar/utils/getNextDaysRange'
 import { areDatesEqual } from '@features/calendar/utils/areDatesEqual'
+import { getPrevMonth } from '@features/calendar/utils/getPrevMonth'
+import { getNextMonth } from '@features/calendar/utils/getNextMonth'
+import { parseDate } from '@features/calendar/utils/parseDate'
+import type { Date } from '@features/calendar/types/Date'
+import { WeekDay } from '@features/calendar/components/WeekDay/WeekDay'
+import { months } from '@features/calendar/constants/months'
+import { Month } from '@features/calendar/types/Month'
+import { Day } from '@features/calendar/components/Day/Day'
+import styles from './Calendar.module.css'
 
-interface CalendarProps {
-  focusedDate: Date
-  setFocusedDate: (date: Date) => void
-}
+interface CalendarProps {}
 
-export const Calendar: FC<CalendarProps> = ({ focusedDate, setFocusedDate }) => {
+export const Calendar: FC<CalendarProps> = () => {
+  const dispatch = useDispatch()
+
+  const focusedDate = useSelector(focusedDateSelector)
+
   const month = getMonthFromDate(parseDate(Date.now()))
   const [currentMonth, setCurrentMonth] = useState<Month>(month)
 
@@ -33,7 +31,7 @@ export const Calendar: FC<CalendarProps> = ({ focusedDate, setFocusedDate }) => 
   const setNextMonth = () => setCurrentMonth(getNextMonth(currentMonth))
 
   const focusDateHandler = (date: Date) => {
-    return () => setFocusedDate(date)
+    return () => dispatch(focusDate({ date }))
   }
 
   const daysArray = getDaysArrayFromMonth(currentMonth)

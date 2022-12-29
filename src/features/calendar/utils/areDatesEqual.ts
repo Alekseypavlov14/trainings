@@ -1,4 +1,4 @@
-import type { Date } from "../types/Date"
+import type { Date } from "@features/calendar/types/Date"
 
 export function areDatesEqual(date1: Date, date2: Date): boolean {
   return (

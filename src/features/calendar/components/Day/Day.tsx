@@ -1,8 +1,7 @@
 import { FC } from 'react'
-import { parseDate } from './../../utils/parseDate'
-import { areDatesEqual } from '../../utils/areDatesEqual'
-import type { Date } from './../../types/Date'
-import { isDateMissed } from '../../utils/isDateMissed'
+import { parseDate } from '@features/calendar/utils/parseDate'
+import { areDatesEqual } from '@features/calendar/utils/areDatesEqual'
+import type { Date } from '@features/calendar/types/Date'
 import styles from './Day.module.css'
 import cn from 'classnames'
 

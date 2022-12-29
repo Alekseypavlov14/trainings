@@ -1,4 +1,4 @@
-import type { Date } from "./../types/Date"
+import type { Date } from "@features/calendar/types/Date"
 
 export function parseDate(time: number): Date {
   const date = new Date(time)
