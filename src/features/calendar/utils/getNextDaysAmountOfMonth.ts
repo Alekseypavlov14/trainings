@@ -1,4 +1,4 @@
-import type { Month } from "./../types/Month"
+import type { Month } from "@features/calendar/types/Month"
 import { getWeekDayFromDate } from './getWeekDayFromDate'
 import { getLastDayOfMonth } from "./getLastDayOfMonth"
 

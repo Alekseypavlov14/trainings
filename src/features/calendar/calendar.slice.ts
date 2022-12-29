@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { CalendarActions } from "@features/calendar/calendar.actions"
 import { parseDate } from "@features/calendar/utils/parseDate"
-import { Date } from "@features/calendar/types/Date"
+import type { Date } from "@features/calendar/types/Date"
 import { AppState } from "@store"
 
 interface InitialState {
@@ -24,4 +24,4 @@ const calendarSlice = createSlice({
 
 export const calendarReducer = calendarSlice.reducer
 export const { focusDate } = calendarSlice.actions
-export const focusDateSelector = (state: AppState) => state.calendar.focusedDate
+export const focusedDateSelector = (state: AppState) => state.calendar.focusedDate

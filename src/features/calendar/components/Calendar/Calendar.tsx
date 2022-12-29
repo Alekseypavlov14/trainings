@@ -21,7 +21,6 @@ interface CalendarProps {}
 
 export const Calendar: FC<CalendarProps> = () => {
   const dispatch = useDispatch()
-
   const focusedDate = useSelector(focusedDateSelector)
 
   const month = getMonthFromDate(parseDate(Date.now()))

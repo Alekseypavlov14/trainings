@@ -1,5 +1,5 @@
-import { months } from "../constants/months"
-import { Month } from "../types/Month"
+import { months } from "@features/calendar/constants/months"
+import { Month } from "@features/calendar/types/Month"
 
 export function getNextMonth(month: Month): Month {
   let newMonthNumber = month.number + 1

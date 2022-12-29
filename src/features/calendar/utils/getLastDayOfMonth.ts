@@ -1,5 +1,5 @@
-import type { Date } from './../types/Date'
-import type { Month } from './../types/Month'
+import type { Date } from '@features/calendar/types/Date'
+import type { Month } from '@features/calendar/types/Month'
 import { getDaysAmountFromMonth } from './getDaysAmountFromMonth'
 import { parseDate } from './parseDate'
 

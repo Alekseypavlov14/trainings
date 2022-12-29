@@ -1,4 +1,4 @@
-import { Month } from "../types/Month"
+import { Month } from "@features/calendar/types/Month"
 import { getNextDaysAmountOfMonth } from "./getNextDaysAmountOfMonth"
 import { getRangeFromNumber } from "./getRangeFromNumber"
 
