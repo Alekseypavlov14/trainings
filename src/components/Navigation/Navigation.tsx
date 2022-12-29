@@ -9,6 +9,7 @@ export const Navigation: FC<NavigationProps> = () => {
     <div className={styles.Navigation}>
       <NavLink to='/'>Today</NavLink>
       <NavLink to='/history'>History</NavLink>
+      <NavLink to='/calendar'>Calendar</NavLink>
     </div>
   )
 }

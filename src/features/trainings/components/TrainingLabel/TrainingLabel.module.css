@@ -1,0 +1,17 @@
+.TrainingLabel {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #999;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Name {
+  font-size: 18px;
+}
+
+.Amount {
+  font-size: 18px;
+  font-weight: 600;
+}

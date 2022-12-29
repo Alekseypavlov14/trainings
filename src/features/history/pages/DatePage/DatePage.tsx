@@ -7,6 +7,7 @@ import { useParams } from 'react-router'
 import { Title } from '@components/Title/Title'
 import { Date } from 'standard-ui'
 import styles from './DatePage.module.css'
+import { TrainingLabel } from '@features/trainings/components/TrainingLabel/TrainingLabel'
 
 interface DatePageProps {}
 
@@ -28,14 +29,11 @@ export const DatePage: FC<DatePageProps> = () => {
 
         <div className={styles.Trainings}>
           {trainings.map(training => (
-            <div className={styles.Training} key={training.id}>
-              <div className={styles.TrainingName}>
-                {training.name}
-              </div>
-              <div className={styles.TrainingAmount}>
-                {training.amount}
-              </div>
-            </div>
+            <TrainingLabel 
+              name={training.name} 
+              amount={training.amount} 
+              key={training.id} 
+            />
           ))}
         </div>
       </Container>

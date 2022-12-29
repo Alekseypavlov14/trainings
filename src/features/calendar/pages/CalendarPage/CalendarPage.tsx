@@ -9,6 +9,7 @@ import { areDatesEqual } from '@features/calendar/utils/areDatesEqual'
 import { Title } from '@components/Title/Title'
 import { Date } from 'standard-ui'
 import styles from './CalendarPage.module.css'
+import { TrainingLabel } from '@features/trainings/components/TrainingLabel/TrainingLabel'
 
 interface CalendarPageProps {}
 
@@ -21,15 +22,27 @@ export const CalendarPage: FC<CalendarPageProps> = () => {
   return (
     <div className={styles.CalendarPage}>
       <Container>
-        <Calendar />
+        <div className={styles.CalendarContainer}>
+          <Calendar />
+        </div>
 
-        <div className={styles.TrainingsToday}>
+        {trainingsByDate.length > 0 ? (
           <Title bold>
             <Date time={window.Date.now()} />
           </Title>
+        ) : (
+          <div className={styles.Placeholder}>
+            There were no training at this day
+          </div>
+        )}
 
+        <div className={styles.TrainingsToday}>
           {trainingsByDate.map(training => (
-            <div key={training.id}>{training.name}</div>
+            <TrainingLabel 
+              key={training.id} 
+              name={training.name}
+              amount={training.amount}
+            />
           ))}
         </div>
       </Container>

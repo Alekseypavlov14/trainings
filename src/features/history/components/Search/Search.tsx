@@ -29,7 +29,7 @@ export const Search: FC<SearchProps> = () => {
 
       {!searchedDate && value.length > 0 && (
         <div className={styles.SearchResult}>
-          There were no trainings in this day
+          There were no trainings at this day
         </div>
       )}
     </>
