@@ -13,9 +13,8 @@
   cursor: pointer;
 }
 
-.Today {
-  background-color: rgb(6, 92, 252);
-  color: #fff;
+.Today:not(.Focused):not(.ActiveDate) {
+  outline: 2px solid rgb(17, 194, 253);
 }
 
 .Day:hover {
@@ -23,11 +22,12 @@
   color: #fff;
 }
 
-/* .Missed {
-  background-color: rgb(223, 3, 3);
-} */
-
-.Focused {
-  background-color: rgb(26, 158, 0);
+.Day.Focused {
+  background-color: rgb(6, 92, 252);
   color: #fff
+}
+
+.ActiveDate {
+  background-color: rgb(26, 158, 0);
+  color: #fff;
 }
