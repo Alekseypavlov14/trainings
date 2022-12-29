@@ -17,7 +17,7 @@
     "react-router": "^6.5.0",
     "react-router-dom": "^6.5.0",
     "redux": "^4.2.0",
-    "standard-ui": "^0.4.2"
+    "standard-ui": "^0.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

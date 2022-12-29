@@ -1,0 +1,33 @@
+.Day {
+  padding: 5px;
+  font-size: 16px;
+  color: #222;
+  display: block;
+  border-radius: 0.5em;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: 0.3s;
+  user-select: none;
+  cursor: pointer;
+}
+
+.Today {
+  background-color: rgb(6, 92, 252);
+  color: #fff;
+}
+
+.Day:hover {
+  background-color: rgb(17, 194, 253);
+  color: #fff;
+}
+
+/* .Missed {
+  background-color: rgb(223, 3, 3);
+} */
+
+.Focused {
+  background-color: rgb(26, 158, 0);
+  color: #fff
+}
