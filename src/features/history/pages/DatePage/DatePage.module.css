@@ -2,6 +2,10 @@
   margin-top: 20px;
 }
 
+.Trainings > *:not(:last-child) {
+  margin-bottom: 5px;
+}
+
 .Training {
   width: 100%;
   padding: 10px;
