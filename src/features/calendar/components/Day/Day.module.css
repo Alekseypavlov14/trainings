@@ -31,3 +31,13 @@
   background-color: rgb(26, 158, 0);
   color: #fff;
 }
+
+.ContainsSearchedTraining {
+  background-color: rgb(245, 245, 89);
+  color: #333;
+}
+
+.WithoutBackground {
+  background-color: transparent;
+  color: #333;
+}

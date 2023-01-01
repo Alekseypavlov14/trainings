@@ -3,6 +3,7 @@ import { useTrainingsByDate } from '@features/trainings/hooks/useTrainingsByDate
 import { AddTrainingToDay } from '@features/trainings/components/AddTrainingToDay/AddTrainingToDay'
 import { TrainingBadge } from '@features/trainings/components/TrainingBadge/TrainingBadge'
 import { Container } from '@components/Container/Container'
+import { parseDate } from '@features/calendar/utils/parseDate'
 import { Title } from '@components/Title/Title'
 import { Date } from 'standard-ui'
 import styles from './TrainingsInDayPage.module.css'
@@ -10,7 +11,7 @@ import styles from './TrainingsInDayPage.module.css'
 interface TrainingsInDayPageProps {}
 
 export const TrainingsInDayPage: FC<TrainingsInDayPageProps> = () => {
-  const trainings = useTrainingsByDate(window.Date.now())
+  const trainings = useTrainingsByDate(parseDate(window.Date.now()))
 
   return (
     <div className={styles.TrainingsInDayPage}>

@@ -5,25 +5,3 @@
 .Trainings > *:not(:last-child) {
   margin-bottom: 10px;
 }
-
-.Training {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #999;
-  display: flex;
-  justify-content: space-between;
-}
-
-.TrainingName {
-  font-size: 18px;
-}
-
-.TrainingAmount {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.Training:not(:last-child) {
-  margin-bottom: 10px;
-}

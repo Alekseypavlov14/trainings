@@ -4,4 +4,6 @@ export namespace CalendarActions {
   export interface FocusDate {
     date: Date
   }
+
+  export type SelectTraining = string | null
 }

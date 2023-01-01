@@ -8,13 +8,14 @@ import { Title } from '@components/Title/Title'
 import { Date } from 'standard-ui'
 import styles from './DatePage.module.css'
 import { TrainingLabel } from '@features/trainings/components/TrainingLabel/TrainingLabel'
+import { parseDate } from '@features/calendar/utils/parseDate'
 
 interface DatePageProps {}
 
 export const DatePage: FC<DatePageProps> = () => {
   const navigate = useNavigate()
   const date = Number(useParams().date)
-  const trainings = useTrainingsByDate(date)
+  const trainings = useTrainingsByDate(parseDate(date))
 
   useEffect(() => {
     if (!date) navigate('/')
