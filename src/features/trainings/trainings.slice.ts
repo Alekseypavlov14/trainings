@@ -12,7 +12,7 @@ interface InitialState {
 }
 
 const initialState: InitialState = {
-  trainings: TrainingsStorage.getValue().map(training => ({ ...training, name: training.name.trim() }))
+  trainings: TrainingsStorage.getValue()
 }
 
 const trainingsSlice = createSlice({
