@@ -1,0 +1,11 @@
+.Row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ColorMeaning {
+  font-size: 16px;
+  color: #333;
+}

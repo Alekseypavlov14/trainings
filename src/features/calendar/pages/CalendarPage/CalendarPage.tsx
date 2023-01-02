@@ -5,13 +5,12 @@ import { areDatesEqual } from '@features/calendar/utils/areDatesEqual'
 import { TrainingLabel } from '@features/trainings/components/TrainingLabel/TrainingLabel'
 import { useSelector } from 'react-redux'
 import { SelectForm } from '@features/calendar/components/SelectForm/SelectForm'
+import { DateTitle } from '@features/calendar/components/DateTitle/DateTitle'
 import { Container } from '@components/Container/Container'
 import { parseDate } from '@features/calendar/utils/parseDate'
 import { Calendar } from '@features/calendar/components/Calendar/Calendar'
 import { Title } from '@components/Title/Title'
-import { Date } from 'standard-ui'
 import styles from './CalendarPage.module.css'
-import { DateTitle } from '@features/calendar/components/DateTitle/DateTitle'
 
 interface CalendarPageProps {}
 

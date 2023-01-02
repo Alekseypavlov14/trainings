@@ -1,0 +1,7 @@
+.ColorMark {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  flex: 0 0 auto; 
+}
