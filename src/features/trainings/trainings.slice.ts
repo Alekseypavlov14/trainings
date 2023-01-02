@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { TrainingsActions } from '@features/trainings/trainings.actions'
 import { LocalStorage } from '@utils/LocalStorage'
+import { generateId } from '@utils/generateId'
 import { AppState } from '@store'
 import { Training } from '@features/trainings/trainings.entity'
-import { generateId } from '@utils/generateId'
 
 const TrainingsStorage = new LocalStorage<Training>('trainings')
 
@@ -12,7 +12,7 @@ interface InitialState {
 }
 
 const initialState: InitialState = {
-  trainings: TrainingsStorage.getValue()
+  trainings: TrainingsStorage.getValue().map(training => ({ ...training, name: training.name.trim() }))
 }
 
 const trainingsSlice = createSlice({

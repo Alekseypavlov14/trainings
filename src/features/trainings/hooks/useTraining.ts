@@ -12,7 +12,7 @@ export function useTraining() {
     const today = new Date(year, month, date)
   
     dispatch(create({
-      name: name,
+      name: name.trim(),
       date: today.getTime(),
       amount: 1
     }))
