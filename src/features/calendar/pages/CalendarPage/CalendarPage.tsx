@@ -11,6 +11,7 @@ import { Calendar } from '@features/calendar/components/Calendar/Calendar'
 import { Title } from '@components/Title/Title'
 import { Date } from 'standard-ui'
 import styles from './CalendarPage.module.css'
+import { DateTitle } from '@features/calendar/components/DateTitle/DateTitle'
 
 interface CalendarPageProps {}
 
@@ -31,7 +32,7 @@ export const CalendarPage: FC<CalendarPageProps> = () => {
 
         {trainingsByDate.length > 0 ? (
           <Title bold>
-            <Date time={window.Date.now()} />
+            <DateTitle date={focusedDate} />
           </Title>
         ) : (
           <div className={styles.Placeholder}>
