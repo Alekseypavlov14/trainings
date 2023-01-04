@@ -1,9 +1,11 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { focusedDateSelector } from '@features/calendar/calendar.slice'
 import { trainingsSelector } from '@features/trainings/trainings.slice'
 import { areDatesEqual } from '@features/calendar/utils/areDatesEqual'
 import { TrainingLabel } from '@features/trainings/components/TrainingLabel/TrainingLabel'
 import { useSelector } from 'react-redux'
+import { ColorHelper } from '@features/calendar/components/ColorHelper/ColorHelper'
+import { HelpButton } from '@features/calendar/components/HelpButton/HelpButton'
 import { SelectForm } from '@features/calendar/components/SelectForm/SelectForm'
 import { DateTitle } from '@features/calendar/components/DateTitle/DateTitle'
 import { Container } from '@components/Container/Container'
@@ -15,6 +17,11 @@ import styles from './CalendarPage.module.css'
 interface CalendarPageProps {}
 
 export const CalendarPage: FC<CalendarPageProps> = () => {
+  const [isShown, setShown] = useState<boolean>(false)
+
+  const openModal = () => setShown(true)
+  const closeModal = () => setShown(false)
+
   const focusedDate = useSelector(focusedDateSelector)
 
   const trainings = useSelector(trainingsSelector)
@@ -48,6 +55,13 @@ export const CalendarPage: FC<CalendarPageProps> = () => {
             />
           ))}
         </div>
+
+        <HelpButton onClick={openModal} />
+
+        <ColorHelper 
+          isShown={isShown} 
+          onClose={closeModal} 
+        />
       </Container>
     </div>
   )
