@@ -29,4 +29,10 @@
   background-color: #fff;
   font-size: 18px;
   font-weight: 600;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.Separator {
+  margin-bottom: 30px;
 }

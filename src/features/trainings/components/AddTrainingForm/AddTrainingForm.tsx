@@ -1,4 +1,5 @@
 import { FC, useState } from 'react'
+import { AddExerciseButton } from '@features/exercises/components/AddExerciseButton/AddExerciseButton'
 import { useTraining } from '@features/trainings/hooks/useTraining'
 import { Select } from '../Select/Select'
 import styles from './AddTrainingForm.module.css'
@@ -26,6 +27,10 @@ export const AddTrainingForm: FC<AddTrainingFormProps> = () => {
       >
         Add!
       </button>
+
+      <div className={styles.Separator}>Or...</div>
+
+      <AddExerciseButton />
     </div>
   )
 }
