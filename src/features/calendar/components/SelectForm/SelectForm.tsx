@@ -1,8 +1,7 @@
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, FC, useEffect, useState } from 'react'
 import { useTrainingNames } from '@features/trainings/hooks/useTrainingNames'
 import { selectTraining } from '@features/calendar/calendar.slice'
 import { useDispatch } from 'react-redux'
-import { Button } from 'standard-ui'
 import styles from './SelectForm.module.css'
 
 interface SelectFormProps {}
@@ -20,7 +19,9 @@ export const SelectForm: FC<SelectFormProps> = () => {
     setSelectedValue(value)
   }
 
-  const searchHandler = () => dispatch(selectTraining(selectedValue || null))
+  useEffect(() => {
+    dispatch(selectTraining(selectedValue || null))
+  }, [selectedValue])
   
   return (
     <div className={styles.SelectForm}>
@@ -42,8 +43,6 @@ export const SelectForm: FC<SelectFormProps> = () => {
           </option>
         ))}
       </select>
-
-      <Button onClick={searchHandler}>Search</Button>
     </div>
   )
 }
