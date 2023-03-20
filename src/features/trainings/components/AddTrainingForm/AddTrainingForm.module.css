@@ -1,0 +1,32 @@
+.AddTrainingForm {
+  margin: 20px 0px;
+}
+
+.Label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.Input {
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+}
+
+.Input:focus {
+  outline: none;
+  border: 1px solid #000;
+}
+
+.Button {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #333;
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}

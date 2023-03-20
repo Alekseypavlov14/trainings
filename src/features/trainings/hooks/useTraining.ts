@@ -1,10 +1,14 @@
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { create } from '@features/trainings/trainings.slice'
 
 export function useTraining() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   return (name: string) => {
+    if (!name.length) return
+
     const now = new Date()
     const date = now.getDate()
     const month = now.getMonth()
@@ -16,5 +20,7 @@ export function useTraining() {
       date: today.getTime(),
       amount: 1
     }))
+
+    navigate('/')
   }
 }

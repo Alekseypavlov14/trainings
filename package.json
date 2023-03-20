@@ -16,6 +16,7 @@
     "react-redux": "^8.0.5",
     "react-router": "^6.5.0",
     "react-router-dom": "^6.5.0",
+    "react-select": "^5.7.0",
     "redux": "^4.2.0",
     "standard-ui": "^0.5.1"
   },
